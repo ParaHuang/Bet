@@ -40,7 +40,7 @@ offers saves sessionKey as key, highest stake of this session on this offer as v
    <tr>
         <th>methods</th>    
         <th>getSessionKey()</th>    
-        <th>replaceOffer(sessionKeyy,stake)</th>    
+        <th>replaceOffer(sessionKey,stake)</th>    
         <th>getHighStakes(betOfferId)</th>    
     </tr>
    <tr>
@@ -57,7 +57,7 @@ offers saves sessionKey as key, highest stake of this session on this offer as v
         </th>    
         <th>
              1.analyze request, get betOfferId<br>
-             2.find all the offers of this betOfferId, save those info into a list, sort them by descending order
+             2.find all the offers of this betOfferId, save those info into a list, sort them by descending order<br>
              3.organized the first 20 into a certian string format
         </th>    
     </tr>
