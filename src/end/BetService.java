@@ -41,7 +41,7 @@ public class BetService {
 
 	public String getHighStakes(int betOfferId) {
 		Offer offer = findOffer(betOfferId);
-		return offer != null ? offer.getHighStakes() : "";
+		return offer != null ? offer.getHighStakes() : "invalid bet offer Id!";
 	}
 
 }

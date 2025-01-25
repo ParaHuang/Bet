@@ -22,7 +22,7 @@ public class Customer {
 	
 	public boolean isExpired() {
 		long currentTime = System.currentTimeMillis();
-		return currentTime-latestUpdatedTime > 1*60*1000;
+		return currentTime-latestUpdatedTime > 10*60*1000;
 	}
 	
 	public void update() {
