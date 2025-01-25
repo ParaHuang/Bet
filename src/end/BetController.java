@@ -21,24 +21,25 @@ public class BetController implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
         URI uri = exchange.getRequestURI();
         String path = uri.getPath();
+        //analyze uri
         String[] parts = path.split("/");
-
+        
         if (parts.length == 3) {
         	String response = "";
         	String keyWord = parts[2];
             int id = Integer.parseInt(parts[1]);
-            switch (keyWord) {
-				case "highstakes":
+            switch (keyWord.toUpperCase()) {
+				case "HIGHSTAKES":
 					response = betService.getHighStakes(id);
 					break;
-				case "stake":
+				case "STAKE":
 					InputStream inputStream = exchange.getRequestBody();
 					String stakeStr = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
 	                        .readLine();
 					
 					response = betService.offerBet(id, uri.getQuery(),stakeStr);
 					break;
-				case "session":
+				case "SESSION":
 					response = betService.getSessionKey(id);
 					break;
 			}

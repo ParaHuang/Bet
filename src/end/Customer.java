@@ -26,9 +26,11 @@ public class Customer {
 	}
 	
 	public void update() {
+		//update key when it's expired
 		if(isExpired()) {
 			sessionKey = UUID.randomUUID().toString().split("-")[0].toUpperCase();
 		}
+		//no matter what, update latestUpdatedTime
 		latestUpdatedTime = System.currentTimeMillis();
 	}
 	
